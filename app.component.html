@@ -1,0 +1,37 @@
+
+   <div class="container mt-4">
+       <div class="row">
+            <div class="co-md-6 offset-md-3">
+              <input type="text" class="form-control"
+              [(ngModel)] = "searchVal"
+                            >
+                  <div class="table-responsive">
+                         <div class="table table-bordered mt-5 color">
+                               <thead>
+                                  <tr>
+                                    <th>ser no</th>
+                                    <th>First Name</th>
+                                    <th>Team Name</th>
+                                    <th>Odi Runs</th>
+                                    <th>Test Runs</th>
+                                    <th> Year Debut</th>
+                                  </tr>
+                               </thead>
+                               <tbody>
+                                   <tr *ngFor = "let player of cricketersArray | cricketersFilter : searchVal; index as i">
+                                      <td>{{i + 1}}</td>
+
+                                      <td>{{player.name}}</td>
+                                      <td>{{player.team}}</td>
+                                      <td>{{player.odiRuns}}</td>
+                                      <td>{{player.testRuns}}</td>
+                                      <td>{{player.yearDebut}}</td>
+                                      
+                                      
+                                   </tr>
+                               </tbody>
+                         </div>
+                  </div>
+            </div>
+       </div>
+   </div>
